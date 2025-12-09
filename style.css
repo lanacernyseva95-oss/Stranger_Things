@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    height: 50vh;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+
+}
+
+.slider {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    width: 50%;
+    height: 80%;
+    gap: 15px;
+}
+
+.actors {
+    height: 100%;
+    width: 300px;
+}
+
