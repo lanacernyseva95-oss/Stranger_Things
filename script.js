@@ -2,21 +2,25 @@ const head = document.querySelector("h1")
 let text = head.textContent
 head.innerHTML = ""
 
-const chars = text.split("")
-console.log(chars)
-animate(chars, {
-  // Property keyframes
-  y: [
-    { to: '-2.75rem', ease: 'outExpo', duration: 600 },
-    { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
+const chars = text.split("").map(char => {
+  let span = document.createElement("span")
+  span.textContent = char === " " ? "\u00A0" : char
+  span.style.display = "inline-block"
+  head.appendChild(span)
+  return span
+})
+
+anime({
+  targets: chars,
+  translateY: [
+    { value: '-2.75rem', easing: 'easeOutExpo', duration: 600 },
+    { value: 0, easing: 'easeOutBounce', duration: 800, delay: 100 }
   ],
-  // Property specific parameters
   rotate: {
-    from: '-1turn',
-    delay: 0
+      value: '-1turn',
   },
-  delay: stagger(50),
-  ease: 'inOutCirc',
+  delay: anime.stagger(100),
+  easing: "easeInOutCirc",
   loopDelay: 1000,
   loop: true
-});
+})
