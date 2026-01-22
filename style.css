@@ -126,3 +126,12 @@ body{
     /*position: relative;*/
     /*left: -60px;*/
 }
+
+.fa-arrow-up {
+    color: white;
+    padding: 20px;
+    background-color: black;
+    font-size: 25px;
+    border: 1px solid red;
+    border-radius: 10px;
+}
